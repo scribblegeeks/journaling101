@@ -1,2 +1,2 @@
-# project5
-Basic instructions go here.
+# Journalling Site
+First README of the project woot woot!
