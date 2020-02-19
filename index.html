@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Journaling Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <div class="wrapper">
+      <div class="c-monthyear">
+        <nav class="c-month">
+          <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"></span>
+          <div id="c-paginator"></div>
+          <span id="next" class="next fa fa-angle-right" aria-hidden="true"></span>
+        </nav>
+        <span class="c-paginator__year">2020</span>
+      </div>
+      <div class="c-sort">
+        <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="c-calendar">
+    <aside class="c-aside c-calendar__style">
+      <a class="c-add o-btn js-event__add" href="javascript:;">Edit </span></a>
+      <h1 class="c-aside__day">
+        <span class="c-aside__num"></span> <span class="c-aside__month"></span>
+      </h1>
+      <article class="c-aside__eventList"></article>
+    </aside>
+
+    <div class="c-cal__container c-calendar__style">
+      <section class="c-main"></section>
+    </div>
+  </main>
+
+  <div class="c-event__creator c-calendar__style js-event__creator">
+    <a href="javascript:;" class="o-btn js-event__close"> CLOSE 
+      <span class="fa fa-close"></span></a>
+    <form id="edit">
+      <textarea contenteditable="true" placeholder="Thoughts on today?" name="notes" cols="30" rows="10"> </textarea>
+    </form>
+    <br>
+    <a href="javascript:;" class="o-btn js-event__save">SAVE <span class="fa fa-save"></span></a>
+  </div>
+</div>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.core.min.js'></script>
+
+<script  src="./entries.js"></script>
+<script  src="./calendar.js"></script>
+
+</body>
+</html>
