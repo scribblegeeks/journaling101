@@ -221,7 +221,11 @@ function restore_Entries(){
 		}
 	}
 }
+
 function make_Entry(make_date, journal_entry){
+	if (!(journal_entry)){
+		return;
+	}
 	let entry;
 	if (entry = e.find(e => (e.year == currentYear && e.month == currentMonth && e.date == make_date))) {
 		entry.text = journal_entry;
@@ -232,13 +236,8 @@ function make_Entry(make_date, journal_entry){
 
 	dataCel.each(function() {
 		if ($(this).children()[0].innerText === make_date) {
-			if (journal_entry) {
-				console.log(journal_entry);
 				$(this).attr("data-notes", entry.text);
 				$(this).addClass("event"); // needed to make the dot
-			}
 		}
-	});
-
-	
+	});	
 } 
