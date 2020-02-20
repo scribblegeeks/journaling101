@@ -23,7 +23,8 @@ var monthText = [
 ];
 
 showCalendar(currentMonth, currentYear);
-sidebarDate();
+goToday();
+make_Entry(14, "busy day, saw a movie, hung out with Ted, not much time to write");
 
 //
 //
@@ -35,23 +36,32 @@ sidebarDate();
 //var todayBtn = $(".c-today__btn");
 document.querySelector(".c-today__btn").onclick = goToday;
 function goToday() {
-  currentMonth = today.getMonth();
-  currentYear = today.getFullYear();
-  showCalendar(currentMonth, currentYear);
+  if (currentMonth != today.getMonth()) {
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    showCalendar(currentMonth, currentYear);
+  }
+
+  currentDate = today.getDate();
+  dataCel.each(function(){
+    if ($(this).children()[0].innerText == currentDate) {
+      selectDay($(this));
+    }
+  });
 };
 
 document.querySelector("#next").onclick = nextMonth;
 function nextMonth() {
-    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-    currentMonth = (currentMonth + 1) % 12;
-    showCalendar(currentMonth, currentYear);
+  currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+  currentMonth = (currentMonth + 1) % 12;
+  showCalendar(currentMonth, currentYear);
 }
 
 document.querySelector("#prev").onclick = previousMonth;
 function previousMonth() {
-    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-    showCalendar(currentMonth, currentYear);
+  currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+  currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+  showCalendar(currentMonth, currentYear);
 }
 
 //
@@ -96,12 +106,12 @@ function showCalendar(month, year) {
             cell = document.createElement("div");
             cell.classList.add("c-cal__cel");
             cell.innerHTML = "<p>" + date + "</p>";
-          
-          if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
-            cell.classList.add("is_today");
-          }
-          row.appendChild(cell);
-          date++;
+
+            if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
+              cell.classList.add("is_today");
+            }
+            row.appendChild(cell);
+            date++;
           }
         }
         OverAll.appendChild(row);
@@ -111,16 +121,22 @@ function showCalendar(month, year) {
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
 function daysInMonth(iMonth, iYear) {
-    return 32 - new Date(iYear, iMonth, 32).getDate();
+  return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+function selectDay(self) {
+  currentDate = self.children()[0].innerText;
+  fillEventSidebar(self.attr("data-notes"));
+
+  dataCel.removeClass("isSelected");
+  self.addClass("isSelected");
 }
 
 var editBtn = $(".js-event__add");
 var saveBtn = $(".js-event__save");
 var closeBtn = $(".js-event__close");
 var winCreator = $(".js-event__creator");
-var inputDate = $(this).data();
 var e = {}; // object of entries
-update_dataCel();
 
 //
 //
@@ -130,6 +146,7 @@ update_dataCel();
 
 //open edit window
 editBtn.on("click", function() {
+  // maybe use =?:; syntax here?
   if ( $(".isSelected").attr("data-notes") == undefined ) {
     document.querySelector("textarea").innerHTML = "";
   }else{
@@ -148,20 +165,9 @@ closeBtn.on("click", function() {
 saveBtn.on("click", function() {
   var inputDate = currentDate;
   var inputNotes = $("textarea[name=notes]").val();
-  var inputTag = $("select[name=tags]").find(":selected").text();
 
-  dataCel.each(function() {
-    if ($(this).children()[0].innerText === inputDate) {
-      if (inputNotes != null) {
-        $(this).attr("data-notes", inputNotes);
-      }
-      $(this).addClass("event");
-      if (inputTag != null) {
-        $(this).addClass("event--" + inputTag);
-      }
-      fillEventSidebar($(this));
-    }
-  });
+  make_Entry(inputDate, inputNotes)
+  fillEventSidebar(inputNotes);
 
   closeEdit();
 });
@@ -172,48 +178,42 @@ saveBtn.on("click", function() {
 //
 //
 
-function fillEventSidebar(self) {
-    $(".c-aside__event").remove();
-    var thisNotes = self.attr("data-notes");
-    var thisEvent = self.hasClass("event");
-    
-    switch (true) {
-      case thisEvent:
-      $(".c-aside__eventList").append(
-        "<p class='c-aside__event'>" +
-        thisNotes +
-        "</span></p>"
-        );
-      break;
-    }
+function fillEventSidebar(NOTE) {
+  $(".c-aside__num").text(currentDate);
+  $(".c-aside__month").text(monthText[currentMonth]);
+  $(".c-aside__event").remove();
+  //var thisNotes = NOTE;//self.attr("data-notes");
+
+  if (NOTE != null) {
+    $(".c-aside__eventList").append(
+      "<p class='c-aside__event'>" +
+      NOTE +
+      "</span></p>"
+      );
+  }
 }
-  
+
 function update_dataCel() {
   dataCel = $(".c-cal__cel");
   dataCel.on("click", function() {
-    var thisEl = $(this);
-    currentDate = $(this).children()[0].innerText;
-    sidebarDate();
-
-    fillEventSidebar($(this));
-
-    dataCel.removeClass("isSelected");
-    thisEl.addClass("isSelected");
+    selectDay($(this));
   });
 }
 
-//handles closing edit 
+//handles closing edit window
 function closeEdit() {
   winCreator.removeClass("isVisible");
   $("body").removeClass("overlay");
   $("#edit")[0].reset();
 }
 
-function sidebarDate(){
-  $(".c-aside__num").text(currentDate);
-  $(".c-aside__month").text(monthText[currentMonth]);
-}
-
-function save_Entries() {
-
-}
+function make_Entry(make_date, journal_entry){
+  dataCel.each(function() {
+    if ($(this).children()[0].innerText == make_date) {
+      if (journal_entry != null) {
+        $(this).attr("data-notes", journal_entry);
+      }
+      $(this).addClass("event"); // needed to make the dot
+    }
+  });
+} 
