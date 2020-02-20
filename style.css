@@ -555,3 +555,7 @@ select::-ms-expand {
 }
 input {
   height: 40px;
+ 
+.is_today {
+  background: rgba(245, 80, 112, .4);
+}
