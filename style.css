@@ -1,9 +1,14 @@
+/*
 @font-face {
   font-family: 'Fjalla One';
   font-style: normal;
-  font-weight: 400;
+  //font-weight: 400;
   src: local('Fjalla One'), local('FjallaOne-Regular'), url(https://fonts.gstatic.com/s/fjallaone/v7/Yq6R-LCAWCX3-6Ky7FAFrOF6lw.ttf) format('truetype');
 }
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/*
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
@@ -43,6 +48,7 @@
 .txt__awesome {
   font: normal normal normal 14px/1 FontAwesome;
 }
+*/
 /* VARIABLES ================================================*/
 /* RESPONSIVE ================================================*/
 /* ===========================================================*/
@@ -72,8 +78,9 @@ body {
   background: linear-gradient(#749d9e, #b3a68b) !important;
   color: #f7f3eb;
   font-size: 13px;
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 400;
+  //font-family: "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
 }
 .wrapper {
   position: relative;
