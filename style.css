@@ -257,7 +257,7 @@ header > .wrapper a {
 }
 .cal__container {
   position: relative;
-  width: calc(100% - 300px);
+  width: 400px;
   height: 0;
   padding-bottom: 65%;
   overflow: hidden;
@@ -370,8 +370,9 @@ header > .wrapper a {
 .event--important:before {
   background-color: #F57170;
 }
+
 .aside {
-  width: 300px;
+  width: calc(100% - 400px);
   padding: 20px;
 }
 .aside__day {
@@ -407,6 +408,7 @@ header > .wrapper a {
   height: 100%;
   z-index: 100;
   padding: 20px;
+  background: linear-gradient(#005fb2, #b0c4df);
   visibility: hidden;
   opacity: 0;
   transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
