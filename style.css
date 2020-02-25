@@ -1,9 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-body {
-  position: relative;
-  height: 100%;
-}
 body.overlay:before {
   position: fixed;
   content: '';
@@ -44,16 +40,16 @@ a {
   -webkit-box-sizing: border-box;
 }
 .u-transition {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
 }
 .u-transition.long {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
 .u-transition.elastic {
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
 }
 .resetDefaultApparence {
   -webkit-appearance: none;
@@ -96,16 +92,16 @@ header > .wrapper a {
   text-decoration: none;
   margin-left: 10px;
 }
-.c-monthyear {
+.monthyear {
   display: -webkit-box;
   display: flex;
 }
-.c-month {
+.month {
   position: relative;
   height: 96px;
   line-height: 96px;
 }
-.c-month #c-paginator {
+.month #paginator {
   position: relative;
   width: 200px;
   display: block;
@@ -114,7 +110,7 @@ header > .wrapper a {
   text-align: center;
   overflow: hidden;
 }
-.c-month #c-paginator .c-paginator__month {
+.month #paginator .paginator__month {
   position: absolute;
   width: 200px;
   top: 0;
@@ -123,44 +119,44 @@ header > .wrapper a {
 }
 
 
-.c-month #c-paginator .c-paginator__month:nth-child(1) {
+.month #paginator .paginator__month:nth-child(1) {
   left: 0;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(2) {
+.month #paginator .paginator__month:nth-child(2) {
   left: 200px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(3) {
+.month #paginator .paginator__month:nth-child(3) {
   left: 400px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(4) {
+.month #paginator .paginator__month:nth-child(4) {
   left: 600px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(5) {
+.month #paginator .paginator__month:nth-child(5) {
   left: 800px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(6) {
+.month #paginator .paginator__month:nth-child(6) {
   left: 1000px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(7) {
+.month #paginator .paginator__month:nth-child(7) {
   left: 1200px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(8) {
+.month #paginator .paginator__month:nth-child(8) {
   left: 1400px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(9) {
+.month #paginator .paginator__month:nth-child(9) {
   left: 1600px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(10) {
+.month #paginator .paginator__month:nth-child(10) {
   left: 1800px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(11) {
+.month #paginator .paginator__month:nth-child(11) {
   left: 2000px;
 }
-.c-month #c-paginator .c-paginator__month:nth-child(12) {
+.month #paginator .paginator__month:nth-child(12) {
   left: 2200px;
 }
-.c-month .prev,
-.c-month .next {
+.month .prev,
+.month .next {
   position: absolute;
   display: block;
   top: 50%;
@@ -177,36 +173,36 @@ header > .wrapper a {
   -webkit-transform: translatey(-50%);
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
 }
-.c-month .prev.long,
-.c-month .next.long {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+.month .prev.long,
+.month .next.long {
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
-.c-month .prev.elastic,
-.c-month .next.elastic {
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.month .prev.elastic,
+.month .next.elastic {
+  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
 }
-.c-month .prev {
+.month .prev {
   left: 0;
 }
-.c-month .prev:hover {
+.month .prev:hover {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
-.c-month .next {
+.month .next {
   right: 0;
 }
-.c-month .next:hover {
+.month .next:hover {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
-.c-paginator__year {
+.paginator__year {
   height: 96px;
   line-height: 96px;
   padding: 0 20px;
@@ -221,16 +217,16 @@ header > .wrapper a {
   letter-spacing: 2px;
   border-radius: 16px;
   -webkit-border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
 }
 .o-btn.long {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
 .o-btn.elastic {
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
 }
 .o-btn span {
   margin-left: 10px;
@@ -240,7 +236,7 @@ header > .wrapper a {
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
-.c-calendar {
+.calendar {
   padding-top: 96px;
   display: -webkit-box;
   display: flex;
@@ -250,7 +246,7 @@ header > .wrapper a {
   -webkit-box-direction: normal;
           flex-direction: row;
 }
-.c-calendar__style {
+.calendar__style {
   background: transparent;
   margin: 20px;
   padding: 10px;
@@ -259,7 +255,7 @@ header > .wrapper a {
   border-radius: 6px;
   -webkit-border-radius: 6px;
 }
-.c-cal__container {
+.cal__container {
   position: relative;
   width: 400px;
   height: 0;
@@ -267,7 +263,7 @@ header > .wrapper a {
   overflow: hidden;
   font-size: 18px;
 }
-.c-main {
+.main {
   position: absolute;
   top: 0;
   left: 0;
@@ -279,49 +275,13 @@ header > .wrapper a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.c-main-01 {
-  left: 0;
-}
-.c-main-02 {
-  left: 100%;
-}
-.c-main-03 {
-  left: 200%;
-}
-.c-main-04 {
-  left: 300%;
-}
-.c-main-05 {
-  left: 400%;
-}
-.c-main-06 {
-  left: 500%;
-}
-.c-main-07 {
-  left: 600%;
-}
-.c-main-08 {
-  left: 700%;
-}
-.c-main-09 {
-  left: 800%;
-}
-.c-main-10 {
-  left: 900%;
-}
-.c-main-11 {
-  left: 1000%;
-}
-.c-main-12 {
-  left: 1100%;
-}
-.c-cal__row {
+.cal__row {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: start;
           justify-content: flex-start;
 }
-.c-cal__col {
+.cal__col {
   width: calc(100% / 7);
   text-align: center;
   height: 50px;
@@ -329,17 +289,17 @@ header > .wrapper a {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.c-cal__cel, .c-cal__empty {
+.cal__cel, .cal__empty {
   position: relative;
   width: calc(100% / 7);
   text-align: center;
   cursor: pointer;
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
-.c-cal__cel p {
+.cal__cel p {
   position: absolute;
   margin: 0;
   top: 50%;
@@ -352,37 +312,37 @@ header > .wrapper a {
   -webkit-transform: translate(-50%, -50%);
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
-.c-cal__cel::before {
+.cal__cel::before {
   content: "";
   display: block;
   padding-top: 100%;
 }
-.c-cal__cel:nth-child(1) p {
+.cal__cel:nth-child(1) p {
   background: transparent;
 }
-.c-cal__cel:nth-child(7) p {
+.cal__cel:nth-child(7) p {
   background: transparent;
 }
-.c-cal__cel:hover {
+.cal__cel:hover {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
-.c-cal__cel.isSelected {
+.cal__cel.isSelected {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
-.c-cal__cel.isToday {
+.cal__cel.isToday {
   background-color: rgba(245, 113, 112, 0.2);
 }
-.c-cal__cel.isToday p {
+.cal__cel.isToday p {
   background: rgba(245, 113, 112, 0.4);
 }
-.c-cal__cel.other_month {
+.cal__cel.other_month {
   color: rgba(255, 255, 255, 0.2);
 }
 .event:before {
@@ -410,24 +370,25 @@ header > .wrapper a {
 .event--important:before {
   background-color: #F57170;
 }
-.c-aside {
+
+.aside {
   width: calc(100% - 400px);
   padding: 20px;
 }
-.c-aside__day {
+.aside__day {
   font-size: 28px;
   margin: 18px 10px;
 }
-.c-aside__day .c-aside__num {
+.aside__day .aside__num {
   font-family: 'Salesforce', sans-serif;
   font-weight: 900;
 }
-.c-aside__event {
+.aside__event {
   position: relative;
   padding-left: 20px;
   margin: 20px 0;
 }
-.c-aside__event:before {
+.aside__event:before {
   position: absolute;
   display: block;
   content: '';
@@ -437,7 +398,7 @@ header > .wrapper a {
   border-radius: 50%;
   -webkit-border-radius: 50%;
 }
-.c-event__creator {
+.event__creator {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -450,23 +411,23 @@ header > .wrapper a {
   background: linear-gradient(#005fb2, #b0c4df);
   visibility: hidden;
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   transform: translate(-50%, -50%) scale(0.9);
   -webkit-transform: translate(-50%, -50%) scale(0.9);
 }
-.c-event__creator.long {
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+.event__creator.long {
+  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
 }
-.c-event__creator.elastic {
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.event__creator.elastic {
+  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
 }
-.c-event__creator form {
+.event__creator form {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -477,7 +438,7 @@ header > .wrapper a {
   -webkit-box-pack: justify;
           justify-content: space-between;
 }
-.c-event__creator.isVisible {
+.event__creator.isVisible {
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
   opacity: 1;
