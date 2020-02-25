@@ -369,12 +369,12 @@ header > .wrapper a {
 .c-cal__cel:hover {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
-  border-radius: 50px!important;
+  border-radius: 200px!important;
 }
 .c-cal__cel.isSelected {
   border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
-  border-radius: 50px!important;
+  border-radius: 200px!important;
 }
 .c-cal__cel.isToday {
   background-color: rgba(245, 113, 112, 0.2);
@@ -416,7 +416,7 @@ header > .wrapper a {
 }
 .c-aside__day {
   font-size: 28px;
-  margin: 10px 10px;
+  margin: 18px 10px;
 }
 .c-aside__day .c-aside__num {
   font-family: 'Salesforce', sans-serif;
