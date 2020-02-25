@@ -1,9 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-
-/* VARIABLES ================================================*/
-/* RESPONSIVE ================================================*/
-/* ===========================================================*/
 body {
   position: relative;
   height: 100%;
@@ -91,7 +87,7 @@ header > .wrapper {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  color: ##c9c7c5;
+  color: #c9c7c5;
   letter-spacing: 4px;
   font-size: 14px;
 }
@@ -125,6 +121,8 @@ header > .wrapper a {
   bottom: 0;
   right: 0;
 }
+
+
 .c-month #c-paginator .c-paginator__month:nth-child(1) {
   left: 0;
 }
@@ -267,6 +265,7 @@ header > .wrapper a {
   height: 0;
   padding-bottom: 65%;
   overflow: hidden;
+  font-size: 18px;
 }
 .c-main {
   position: absolute;
@@ -417,10 +416,10 @@ header > .wrapper a {
 }
 .c-aside__day {
   font-size: 28px;
-  margin: 50px 0;
+  margin: 10px 10px;
 }
 .c-aside__day .c-aside__num {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Salesforce', sans-serif;
   font-weight: 900;
 }
 .c-aside__event {
