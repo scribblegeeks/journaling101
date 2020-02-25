@@ -1,57 +1,5 @@
-/*
-@font-face {
-  font-family: 'Fjalla One';
-  font-style: normal;
-  //font-weight: 400;
-  src: local('Fjalla One'), local('FjallaOne-Regular'), url(https://fonts.gstatic.com/s/fjallaone/v7/Yq6R-LCAWCX3-6Ky7FAFrOF6lw.ttf) format('truetype');
-}
-*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-/*
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
-}
-.txt__normal {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 400;
-}
-.txt__normal--it {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-.txt__bold {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 900;
-}
-.txt__bold--it {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-.txt__awesome {
-  font: normal normal normal 14px/1 FontAwesome;
-}
-*/
-/* VARIABLES ================================================*/
-/* RESPONSIVE ================================================*/
-/* ===========================================================*/
 body {
   position: relative;
   height: 100%;
@@ -70,16 +18,12 @@ body.overlay:before {
 body {
   height: 100%;
   box-sizing: border-box !important;
-  background: #749d9e;
-  /* background: -webkit-linear-gradient(#749d9e, #b3a68b)!important; 
-  background: -o-linear-gradient(#749d9e, #b3a68b)!important; 
-  background: -moz-linear-gradient(#749d9e, #b3a68b)!important; */
-  background: -webkit-gradient(linear, left top, left bottom, from(#749d9e), to(#b3a68b)) !important;
-  background: linear-gradient(#749d9e, #b3a68b) !important;
-  color: #f7f3eb;
+  background: #005fb2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#005fb2), to(#b0c4df)) !important;
+  background: linear-gradient(#005fb2, #b0c4df) !important;
+  color: #c9c7c5;
   font-size: 13px;
-  //font-family: "Times New Roman", Times, serif;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Salesforce', sans-serif;
   font-weight: 100;
 }
 .wrapper {
@@ -127,7 +71,7 @@ a {
 /* STYLE ===========================================================*/
 header {
   position: fixed;
-  height: 80px;
+  height: 96px;
   width: 100%;
   z-index: 50;
   background: transparent;
@@ -143,12 +87,12 @@ header > .wrapper {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  color: #ffffff;
-  letter-spacing: 2px;
-  font-size: 13px;
+  color: #c9c7c5;
+  letter-spacing: 4px;
+  font-size: 14px;
 }
 header > .wrapper a {
-  color: #ffffff;
+  color: #c9c7c5;
   text-decoration: none;
   margin-left: 10px;
 }
@@ -158,15 +102,15 @@ header > .wrapper a {
 }
 .c-month {
   position: relative;
-  height: 80px;
-  line-height: 80px;
+  height: 96px;
+  line-height: 96px;
 }
 .c-month #c-paginator {
   position: relative;
   width: 200px;
   display: block;
-  height: 80px;
-  line-height: 80px;
+  height: 96px;
+  line-height: 96px;
   text-align: center;
   overflow: hidden;
 }
@@ -177,6 +121,8 @@ header > .wrapper a {
   bottom: 0;
   right: 0;
 }
+
+
 .c-month #c-paginator .c-paginator__month:nth-child(1) {
   left: 0;
 }
@@ -220,7 +166,7 @@ header > .wrapper a {
   top: 50%;
   width: 30px;
   height: 30px;
-  padding: 9px 12px;
+  padding: 8px 12px;
   background-color: transparent;
   cursor: pointer;
   z-index: 10;
@@ -248,7 +194,7 @@ header > .wrapper a {
   left: 0;
 }
 .c-month .prev:hover {
-  border: 1px solid #f7f3eb;
+  border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
@@ -256,13 +202,13 @@ header > .wrapper a {
   right: 0;
 }
 .c-month .next:hover {
-  border: 1px solid #f7f3eb;
+  border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
 .c-paginator__year {
-  height: 80px;
-  line-height: 80px;
+  height: 96px;
+  line-height: 96px;
   padding: 0 20px;
 }
 .o-btn {
@@ -273,8 +219,8 @@ header > .wrapper a {
   background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -290,12 +236,12 @@ header > .wrapper a {
   margin-left: 10px;
 }
 .o-btn:hover {
-  border: 1px solid #f7f3eb;
+  border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
 .c-calendar {
-  padding-top: 80px;
+  padding-top: 96px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -319,6 +265,7 @@ header > .wrapper a {
   height: 0;
   padding-bottom: 65%;
   overflow: hidden;
+  font-size: 18px;
 }
 .c-main {
   position: absolute;
@@ -420,14 +367,14 @@ header > .wrapper a {
   background: transparent;
 }
 .c-cal__cel:hover {
-  border: 1px solid #f7f3eb;
+  border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
 .c-cal__cel.isSelected {
-  border: 1px solid #f7f3eb;
+  border: 1px solid #c9c7c5;
   box-sizing: border-box !important;
-  border-radius: 100px!important;
+  border-radius: 200px!important;
 }
 .c-cal__cel.isToday {
   background-color: rgba(245, 113, 112, 0.2);
@@ -444,7 +391,7 @@ header > .wrapper a {
   display: block;
   width: 10px;
   height: 10px;
-  background-color: #f7f3eb;
+  background-color: #c9c7c5;
   z-index: 10;
   padding: 0;
   top: 50%;
@@ -469,10 +416,10 @@ header > .wrapper a {
 }
 .c-aside__day {
   font-size: 28px;
-  margin: 50px 0;
+  margin: 18px 10px;
 }
 .c-aside__day .c-aside__num {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Salesforce', sans-serif;
   font-weight: 900;
 }
 .c-aside__event {
@@ -561,7 +508,7 @@ select::-ms-expand {
   display: none;
 }
 input {
-  height: 40px;
+  height: 48px;
  
 .is_today {
   background: rgba(245, 80, 112, .4);
