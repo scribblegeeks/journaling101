@@ -1,54 +1,6 @@
-/*
-@font-face {
-  font-family: 'Fjalla One';
-  font-style: normal;
-  //font-weight: 400;
-  src: local('Fjalla One'), local('FjallaOne-Regular'), url(https://fonts.gstatic.com/s/fjallaone/v7/Yq6R-LCAWCX3-6Ky7FAFrOF6lw.ttf) format('truetype');
-}
-*/
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-/*
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1Mu51xIIzc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
-}
-.txt__normal {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 400;
-}
-.txt__normal--it {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-.txt__bold {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 900;
-}
-.txt__bold--it {
-  font-family: 'Fjalla One', sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-.txt__awesome {
-  font: normal normal normal 14px/1 FontAwesome;
-}
-*/
+
 /* VARIABLES ================================================*/
 /* RESPONSIVE ================================================*/
 /* ===========================================================*/
