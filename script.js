@@ -74,11 +74,11 @@ function previousMonth() {
 function showCalendar(month, year) {
 	let firstDay = (new Date(year, month)).getDay();
 
-	let Disp_Month = document.querySelector("#paginator");
+	let Disp_Month = document.querySelector("#header_month");
 	Disp_Month.classList.add("cal__row");
 	Disp_Month.innerHTML = monthText[month];
 
-	document.querySelector(".paginator__year").innerHTML = year;
+	document.querySelector("#header_year").innerHTML = year;
 
 	let OverAll = document.querySelector(".main");
 	OverAll.innerHTML = "";

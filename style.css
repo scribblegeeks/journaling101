@@ -1,5 +1,24 @@
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
+header {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em; /* em is size of font */
+  width: 100%;
+
+  background: transparent;
+}
+.monthyear {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
 body.overlay:before {
   position: fixed;
   content: '';
@@ -22,35 +41,11 @@ body {
   font-family: 'Salesforce', sans-serif;
   font-weight: 100;
 }
-.wrapper {
-  position: relative;
-  max-width: 1280px;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
 a {
   color: inherit;
   text-decoration: none;
 }
 /* UTILITY ===========================================================*/
-.u-border-box {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-.u-transition {
-  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
-}
-.u-transition.long {
-  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-}
-.u-transition.elastic {
-  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
-}
 .resetDefaultApparence {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -65,144 +60,34 @@ a {
   display: none;
 }
 /* STYLE ===========================================================*/
-header {
-  position: fixed;
-  height: 96px;
-  width: 100%;
-  z-index: 50;
-  background: transparent;
-}
-header > .wrapper {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-          align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  color: #c9c7c5;
-  letter-spacing: 4px;
-  font-size: 14px;
-}
-header > .wrapper a {
-  color: #c9c7c5;
-  text-decoration: none;
-  margin-left: 10px;
-}
-.monthyear {
-  display: -webkit-box;
-  display: flex;
-}
+
 .month {
-  position: relative;
-  height: 96px;
-  line-height: 96px;
-}
-.month #paginator {
-  position: relative;
-  width: 200px;
-  display: block;
-  height: 96px;
-  line-height: 96px;
-  text-align: center;
-  overflow: hidden;
-}
-.month #paginator .paginator__month {
-  position: absolute;
-  width: 200px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-}
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 
-
-.month #paginator .paginator__month:nth-child(1) {
-  left: 0;
+  position: relative;
+  height: 100%;
+  width: 200px;
 }
-.month #paginator .paginator__month:nth-child(2) {
-  left: 200px;
+.month #header_month {
+  height: 100%;
+  align-items: center;
 }
-.month #paginator .paginator__month:nth-child(3) {
-  left: 400px;
-}
-.month #paginator .paginator__month:nth-child(4) {
-  left: 600px;
-}
-.month #paginator .paginator__month:nth-child(5) {
-  left: 800px;
-}
-.month #paginator .paginator__month:nth-child(6) {
-  left: 1000px;
-}
-.month #paginator .paginator__month:nth-child(7) {
-  left: 1200px;
-}
-.month #paginator .paginator__month:nth-child(8) {
-  left: 1400px;
-}
-.month #paginator .paginator__month:nth-child(9) {
-  left: 1600px;
-}
-.month #paginator .paginator__month:nth-child(10) {
-  left: 1800px;
-}
-.month #paginator .paginator__month:nth-child(11) {
-  left: 2000px;
-}
-.month #paginator .paginator__month:nth-child(12) {
-  left: 2200px;
-}
-.month .prev,
-.month .next {
-  position: absolute;
-  display: block;
-  top: 50%;
-  width: 30px;
-  height: 30px;
+#prev, #next {
   padding: 8px 12px;
-  background-color: transparent;
   cursor: pointer;
-  z-index: 10;
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  transform: translatey(-50%);
-  -webkit-transform: translatey(-50%);
+  border-radius: 200px;
+}
+#prev:hover, #next:hover {
+  border: 1px solid #c9c7c5;
+  box-sizing: border-box !important;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
 }
-.month .prev.long,
-.month .next.long {
-  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-}
-.month .prev.elastic,
-.month .next.elastic {
-  transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: all 0.25s cubibezier(0.175, 0.885, 0.32, 1.275);
-}
-.month .prev {
-  left: 0;
-}
-.month .prev:hover {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 200px!important;
-}
-.month .next {
-  right: 0;
-}
-.month .next:hover {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 200px!important;
-}
-.paginator__year {
+
+#header_year {
   height: 96px;
   line-height: 96px;
   padding: 0 20px;
