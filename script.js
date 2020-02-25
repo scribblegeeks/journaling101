@@ -34,8 +34,8 @@ make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to wri
 //
 
 
-//var todayBtn = $(".c-today__btn");
-document.querySelector(".c-today__btn").onclick = goToday;
+//var todayBtn = $(".today__btn");
+document.querySelector(".today__btn").onclick = goToday;
 function goToday() {
 	if (currentMonth != today.getMonth()) {
 		currentMonth = today.getMonth();
@@ -74,19 +74,19 @@ function previousMonth() {
 function showCalendar(month, year) {
 	let firstDay = (new Date(year, month)).getDay();
 
-	let Disp_Month = document.querySelector("#c-paginator");
-	Disp_Month.classList.add("c-cal__row");
+	let Disp_Month = document.querySelector("#paginator");
+	Disp_Month.classList.add("cal__row");
 	Disp_Month.innerHTML = monthText[month];
 
-	document.querySelector(".c-paginator__year").innerHTML = year;
+	document.querySelector(".paginator__year").innerHTML = year;
 
-	let OverAll = document.querySelector(".c-main");
+	let OverAll = document.querySelector(".main");
 	OverAll.innerHTML = "";
 
 	let row = document.createElement("div");
-	row.classList.add("c-cal__row");
+	row.classList.add("cal__row");
 	for (day of ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]){
-		row.innerHTML += "<div class='c-cal__col'>" + day + "</div>";
+		row.innerHTML += "<div class='cal__col'>" + day + "</div>";
 	}
 	OverAll.appendChild(row);
 
@@ -94,18 +94,18 @@ function showCalendar(month, year) {
 	for (let i = 0; i < 6; i++) {
         // creates a table row
         let row = document.createElement("div");
-        row.classList.add("c-cal__row");
+        row.classList.add("cal__row");
 
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
         	if (i == 0 && j < firstDay) {
-        		row.innerHTML += "<div class='c-cal__empty'></div>";
+        		row.innerHTML += "<div class='cal__empty'></div>";
         	}
         	else if (date > daysInMonth(month, year)) {
         		break;
         	} else {
         		cell = document.createElement("div");
-        		cell.classList.add("c-cal__cel");
+        		cell.classList.add("cal__cel");
         		cell.innerHTML = "<p>" + date + "</p>";
 
         		if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
@@ -181,14 +181,14 @@ saveBtn.on("click", function() {
 //
 
 function fillEventSidebar(NOTE) {
-	$(".c-aside__num").text(currentDate);
-	$(".c-aside__month").text(monthText[currentMonth]);
-	$(".c-aside__event").remove();
+	$(".aside__num").text(currentDate);
+	$(".aside__month").text(monthText[currentMonth]);
+	$(".aside__event").remove();
   //var thisNotes = NOTE;//self.attr("data-notes");
 
   if (NOTE != null) {
-  	$(".c-aside__eventList").append(
-  		"<p class='c-aside__event'>" +
+  	$(".aside__eventList").append(
+  		"<p class='aside__event'>" +
   		NOTE +
   		"</span></p>"
   		);
@@ -196,7 +196,7 @@ function fillEventSidebar(NOTE) {
 }
 
 function update_dataCel() {
-	dataCel = $(".c-cal__cel");
+	dataCel = $(".cal__cel");
 	dataCel.on("click", function() {
 		selectDay($(this));
 	});
