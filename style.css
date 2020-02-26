@@ -134,6 +134,7 @@ main {
   position: relative;
   padding-left: 20px;
   margin: 20px 0;
+  cursor: pointer;
 }
 .preview_event:before {
   position: absolute;

@@ -27,6 +27,7 @@ showCalendar(currentMonth, currentYear);
 goToday();
 make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to write");
 
+
 //
 //
 //  BUTTTONS ON PRESS
@@ -53,9 +54,13 @@ function goToday() {
 
 document.querySelector("#next").onclick = nextMonth;
 function nextMonth() {
-	currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-	currentMonth = (currentMonth + 1) % 12;
-	showCalendar(currentMonth, currentYear);
+	if (currentYear == today.getFullYear() && currentMonth == today.getMonth()){
+	}
+	else{
+		currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+		currentMonth = (currentMonth + 1) % 12;
+		showCalendar(currentMonth, currentYear);
+	}
 }
 
 document.querySelector("#prev").onclick = previousMonth;
@@ -120,6 +125,22 @@ function showCalendar(month, year) {
     }
     update_dataCel();
     restore_Entries();
+
+    //don't go past current month
+    if (month == today.getMonth() && year == today.getFullYear()){
+		document.querySelector("#next").style.pointerEvents = 'none';
+		document.querySelector("#next").style.visibility = "hidden";
+	}
+	else{
+		document.querySelector('#next').style.pointerEvents = 'auto';
+		document.querySelector("#next").style.visibility = "visible";	
+	}
+	currentDate = 1;
+	dataCel.each(function(){
+		if ($(this).children()[0].innerText == currentDate) {
+				selectDay($(this));
+		}
+	});
 }
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
@@ -139,6 +160,19 @@ const editBtn = $(".js-event_add");
 const saveBtn = $(".js-event_save");
 const closeBtn = $(".js-event_close");
 const winCreator = $(".js-event_creator");
+const editTxt = $(".preview_eventList")
+
+
+
+editTxt.on("click", function(){
+	if ( $(".isSelected").attr("data-notes") == undefined ) {
+  	document.querySelector("textarea").innerHTML = "";
+  }else{
+  	document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
+  }
+  winCreator.addClass("isVisible");
+  $("body").addClass("overlay");
+})
 
 //
 //
