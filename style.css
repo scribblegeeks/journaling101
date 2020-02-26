@@ -25,9 +25,29 @@ a {
   border-radius: 200px!important;
 }
 
+body {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-template-rows: 4em 1fr;
+  grid-template-areas: 
+  "header header"
+  "main cal"
+}
+header {
+  grid-area: header;
+}
+.preview {
+  grid-area: main;
+}
+aside {
+  grid-area: cal;
+  max-width: 100%;
+}
+
+
+
 /* BODY ==============================================================*/
 body {
-  height: 100%;
   box-sizing: border-box !important;
   background: #005fb2;
   background: linear-gradient(#005fb2, #b0c4df);
@@ -55,7 +75,6 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 4em; /* em is size of font */
   width: 100%;
 
   background: transparent;
@@ -115,7 +134,6 @@ main {
   border-radius: 6px;
 }
 .preview {
-  width: calc(100% - 400px);
   padding: 20px;
 }
 .preview_day {
@@ -143,20 +161,9 @@ main {
 
 /* CALENDAR =========================================================*/
 .cal_container {
-  width: 400px;
-  position: relative;
-  padding-bottom: 65%; /*this will cause issues*/
-  overflow: hidden;
+  padding-bottom: 71%; /*this will cause issues*/
 }
 .calendar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
 }
 .cal_row {
   display: flex;
