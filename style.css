@@ -66,7 +66,8 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
+  padding: 8px;
+  box-sizing: border-box;
   background: transparent;
 }
 .monthyear {
@@ -74,13 +75,15 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 2px;
 }
 .month {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-
+  text-transform: uppercase;
+  letter-spacing: 2px;
   width: 200px;
 }
 #prev, #next {
@@ -119,6 +122,7 @@ header {
   position: relative;
   cursor: pointer;
   margin: 10px;
+  white-space: pre-wrap;
 }
 
 /* CALENDAR =========================================================*/
@@ -220,4 +224,8 @@ textarea{
   left: 50%;
   margin-left: calc(var(--dot_size) / -2);
   bottom: calc(var(--dot_size) / 2);
+}
+
+.event_creator_date{
+  font-size: 28px;
 }
