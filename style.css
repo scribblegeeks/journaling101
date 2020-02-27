@@ -117,6 +117,7 @@ header {
 }
 .preview_event {
   position: relative;
+  cursor: pointer;
   margin: 10px;
 }
 

@@ -137,8 +137,8 @@ function showCalendar(month, year) {
 	}
 	currentDate = 1;
 	dataCel.each(function(){
-		if ($(this).children()[0].innerText == currentDate) {
-				selectDay($(this));
+		if (this.innerText == currentDate) {
+				selectDay(this);
 		}
 	});
 }
