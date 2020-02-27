@@ -163,18 +163,6 @@ const closeBtn = $(".js-event_close");
 const winCreator = $(".js-event_creator");
 const editTxt = $(".preview_eventList")
 
-
-
-editTxt.on("click", function(){
-	if ( $(".isSelected").attr("data-notes") == undefined ) {
-  	document.querySelector("textarea").innerHTML = "";
-  }else{
-  	document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
-  }
-  winCreator.addClass("isVisible");
-  $("body").addClass("overlay");
-})
-
 //
 //
 //  BUTTTONS ON PRESS
@@ -183,15 +171,24 @@ editTxt.on("click", function(){
 
 //open edit window
 editBtn.on("click", function() {
-  // maybe use =?:; syntax here?
-  if ( $(".isSelected").attr("data-notes") == undefined ) {
-  	document.querySelector("textarea").innerHTML = "";
-  }else{
-  	document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
-  }
-  winCreator.addClass("isVisible");
-  $("body").addClass("overlay");
+  openWindow();
 });
+
+editTxt.on("click", function(){
+	openWindow();
+})
+
+function openWindow(){
+	if ( $(".isSelected").attr("data-notes") == undefined ) {
+  		document.querySelector("textarea").innerHTML = "";
+  	}
+  	else{
+  		document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
+  	}
+  	winCreator.addClass("isVisible");
+	$("body").addClass("overlay");
+	document.querySelector(".event_creator_date").innerHTML = currentDate + " " + monthText[currentMonth];
+}
 
 //close edit window
 closeBtn.on("click", function() {
