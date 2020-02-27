@@ -24,6 +24,7 @@ a {
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
+
 html, body {
   height: 100%; /* fills the screen top to bottom */
 }
