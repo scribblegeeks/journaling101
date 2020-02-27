@@ -27,18 +27,15 @@ showCalendar(currentMonth, currentYear);
 goToday();
 make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to write");
 
-
 //
 //
 //  BUTTTONS ON PRESS
 //
 //
 
-
-//var todayBtn = $(".today_btn");
 document.querySelector(".today_btn").onclick = goToday;
 function goToday() {
-	if (currentMonth != today.getMonth()) {
+	if (currentMonth != today.getMonth() || currentYear != today.getYear()) {
 		currentMonth = today.getMonth();
 		currentYear = today.getFullYear();
 		showCalendar(currentMonth, currentYear);
@@ -77,39 +74,39 @@ function previousMonth() {
 //
 
 function showCalendar(month, year) {
-	let firstDay = (new Date(year, month)).getDay();
-
+	
+	// Update Header
 	let Disp_Month = document.querySelector("#header_month");
 	Disp_Month.classList.add("cal_row");
 	Disp_Month.innerHTML = monthText[month];
-
 	document.querySelector("#header_year").innerHTML = year;
 
+	// Make first row of Days of the Week
 	let OverAll = document.querySelector(".calendar");
 	OverAll.innerHTML = "";
-
-	let row = document.createElement("div");
+	let row = document.createElement("tr");
 	row.classList.add("cal_row");
 	for (day of ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]){
-		row.innerHTML += "<div class='cal_col'>" + day + "</div>";
+		row.innerHTML += "<th class='cal_col'>" + day + "</th>";
 	}
 	OverAll.appendChild(row);
 
+	const firstDay = (new Date(year, month)).getDay();
 	let date = 1;
 	for (let i = 0; i < 6; i++) {
         // creates a table row
-        let row = document.createElement("div");
+        let row = document.createElement("tr");
         row.classList.add("cal_row");
 
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
         	if (i == 0 && j < firstDay) {
-        		row.innerHTML += "<div class='cal_empty'></div>";
+        		row.innerHTML += "<td class='cal_empty'></td>";
         	}
         	else if (date > daysInMonth(month, year)) {
         		break;
         	} else {
-        		cell = document.createElement("div");
+        		cell = document.createElement("td");
         		cell.classList.add("cal_cel");
         		cell.innerHTML = date;
 
@@ -120,11 +117,17 @@ function showCalendar(month, year) {
         		date++;
         	}
         }
-        OverAll.appendChild(row);
-        
+        OverAll.appendChild(row); 
     }
     update_dataCel();
+    currentDate = 1;
     restore_Entries();
+
+    dataCel.each(function(){
+		if (this.innerText == currentDate) {
+				selectDay(this);
+		}
+	});
 
     //don't go past current month
     if (month == today.getMonth() && year == today.getFullYear()){
@@ -135,12 +138,7 @@ function showCalendar(month, year) {
 		document.querySelector('#next').style.pointerEvents = 'auto';
 		document.querySelector("#next").style.visibility = "visible";	
 	}
-	currentDate = 1;
-	dataCel.each(function(){
-		if (this.innerText == currentDate) {
-				selectDay(this);
-		}
-	});
+	
 }
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
@@ -149,7 +147,6 @@ function daysInMonth(iMonth, iYear) {
 }
 
 function selectDay(self) {
-	console.log(self);
 	currentDate = self.innerText;
 	fillEventSidebar(self.getAttribute("data-notes"));
 
@@ -161,9 +158,7 @@ const editBtn = $(".js-event_add");
 const saveBtn = $(".js-event_save");
 const closeBtn = $(".js-event_close");
 const winCreator = $(".js-event_creator");
-const editTxt = $(".preview_eventList")
-
-
+const editTxt = $(".preview_eventList");
 
 editTxt.on("click", function(){
 	if ( $(".isSelected").attr("data-notes") == undefined ) {
@@ -219,9 +214,8 @@ function fillEventSidebar(NOTE) {
 	$(".preview_num").text(currentDate);
 	$(".preview_month").text(monthText[currentMonth]);
 	$(".preview_event").remove();
-  //var thisNotes = NOTE;//self.attr("data-notes");
 
-  if (NOTE != null) {
+  	if (NOTE != null) {
   	$(".preview_eventList").append(
   		"<p class='preview_event'>" +
   		NOTE +
