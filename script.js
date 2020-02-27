@@ -120,6 +120,12 @@ function showCalendar(month, year) {
     }
     update_dataCel();
     currentDate = 1;
+    dataCel.each(function(){
+		if (this.innerText == currentDate) {
+			selectDay(this);
+		}
+	});
+	
     restore_Entries();
 
     //don't go past current month
