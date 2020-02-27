@@ -10,38 +10,36 @@
 
 <body>
   <header>
-    <div class="wrapper">
-      <div class="monthyear">
+    <div class="monthyear">
         <nav class="month">
-          <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"></span>
-          <div id="paginator"></div>
-          <span id="next" class="next fa fa-angle-right" aria-hidden="true"></span>
+          <span id="prev" class="fa fa-angle-left"></span>
+          <div id="header_month"></div>
+          <span id="next" class="fa fa-angle-right"></span>
         </nav>
-        <span class="paginator__year">2020</span>
+        <span id="header_year">2020</span>
       </div>
-      <div class="sort">
-        <a class="o-btn today__btn" href="javascript:;">TODAY</a>
-      </div>
-    </div>
+      <a class="o-btn today_btn" href="javascript:;">TODAY</a>
   </header>
 
-  <main class="calendar">
-    <aside class="aside calendar__style">
-      <h1 class="aside__day">
-        <span class="aside__num"></span> <span class="aside__month"></span>
+  
+    <section class="preview calendar_style">
+      <h1 class="preview_day">
+        <span class="preview_num"></span>
+        <span class="preview_month"></span>
       </h1>
-      <a class="add o-btn js-event__add" href="javascript:;">Edit </span></a>
-      <article class="aside__eventList"></article>
-    </aside>
+      <a class="add o-btn js-event_add" href="javascript:;">Edit</a>
+      <article class="preview_eventList"></article>
+    </section>
 
-    <div class="cal__container calendar__style">
-      <section class="main"></section>
-    </div>
-  </main>
-  <div class="event__creator calendar__style js-event__creator">
-    <a href="javascript:;" class="o-btn js-event__save">SAVE <span class="fa fa-save"></span></a>
-    <a href="javascript:;" class="o-btn js-event__close"> CLOSE 
-      <span class="fa fa-close"></span></a>
+    <aside class="cal_container calendar_style">
+      <table class="calendar"></table>
+    </aside>
+  
+  
+  <div class="event_creator calendar_style js-event_creator">
+    <a href="javascript:;" class="o-btn js-event_save">SAVE <span class="fa fa-save"></span></a>
+    <article class="event_creator_date"></article>
+    <a href="javascript:;" class="o-btn js-event_close"> CLOSE <span class="fa fa-close"></span></a>
     <form id="edit">
       <textarea contenteditable="true" placeholder="Thoughts on today?" name="notes" > </textarea>
     </form>
