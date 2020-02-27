@@ -46,8 +46,8 @@ function goToday() {
 
 	currentDate = today.getDate();
 	dataCel.each(function(){
-		if ($(this).children()[0].innerText == currentDate) {
-			selectDay($(this));
+		if (this.innerText == currentDate) {
+			selectDay(this);
 		}
 	});
 };
@@ -111,7 +111,7 @@ function showCalendar(month, year) {
         	} else {
         		cell = document.createElement("div");
         		cell.classList.add("cal_cel");
-        		cell.innerHTML = "<p>" + date + "</p>";
+        		cell.innerHTML = date;
 
         		if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
         			cell.classList.add("is_today");
@@ -149,11 +149,12 @@ function daysInMonth(iMonth, iYear) {
 }
 
 function selectDay(self) {
-	currentDate = self.children()[0].innerText;
-	fillEventSidebar(self.attr("data-notes"));
+	console.log(self);
+	currentDate = self.innerText;
+	fillEventSidebar(self.getAttribute("data-notes"));
 
 	dataCel.removeClass("isSelected");
-	self.addClass("isSelected");
+	self.classList.add("isSelected");
 }
 
 const editBtn = $(".js-event_add");
@@ -232,7 +233,7 @@ function fillEventSidebar(NOTE) {
 function update_dataCel() {
 	dataCel = $(".cal_cel");
 	dataCel.on("click", function() {
-		selectDay($(this));
+		selectDay(this);
 	});
 }
 
@@ -247,9 +248,9 @@ function restore_Entries(){
 	for (entry of e){
 		if (entry.year == currentYear && entry.month == currentMonth){
 			dataCel.each(function() {
-				if ($(this).children()[0].innerText === entry.date) {
-					$(this).attr("data-notes", entry.text);
-					$(this).addClass("event");
+				if (this.innerText === entry.date) {
+					this.setAttribute("data-notes", entry.text);
+					this.classList.add("event");
 				}
 			});
 		}
@@ -269,9 +270,9 @@ function make_Entry(make_date, journal_entry){
 	}
 
 	dataCel.each(function() {
-		if ($(this).children()[0].innerText === make_date) {
-				$(this).attr("data-notes", entry.text);
-				$(this).addClass("event"); // needed to make the dot
+		if (this.innerText === make_date) {
+			this.setAttribute("data-notes", entry.text);
+			this.classList.add("event"); // needed to make the dot
 		}
 	});	
 } 
