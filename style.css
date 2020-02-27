@@ -24,32 +24,19 @@ a {
   box-sizing: border-box !important;
   border-radius: 200px!important;
 }
+html, body {
+  height: 100%; /* fills the screen top to bottom */
+}
 
+/* BODY ==============================================================*/
 body {
   display: grid;
   grid-template-columns: 1fr 400px;
   grid-template-rows: 4em 1fr;
   grid-template-areas: 
   "header header"
-  "main cal"
-}
-header {
-  grid-area: header;
-}
-.preview {
-  grid-area: main;
-}
-aside {
-  grid-area: cal;
-  max-width: 100%;
-}
+  "main cal";
 
-
-
-/* BODY ==============================================================*/
-body {
-  box-sizing: border-box !important;
-  background: #005fb2;
   background: linear-gradient(#005fb2, #b0c4df);
   color: #c9c7c5;
   font-size: 13px;
@@ -70,6 +57,8 @@ body.overlay:before {
 
 /* HEADER ===========================================================*/
 header {
+  grid-area: header;
+
   position: fixed;
   display: flex;
   flex-flow: row nowrap;
@@ -84,7 +73,6 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 .month {
   display: flex;
@@ -92,49 +80,31 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  position: relative;
-  height: 100%;
   width: 200px;
-}
-#header_month {
-  height: 100%;
-  align-items: center;
 }
 #prev, #next {
   padding: 8px 12px;
   cursor: pointer;
-  box-sizing: border-box;
-  border-radius: 200px;
 }
 #prev:hover, #next:hover {
   border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
   border-radius: 50%;
 }
-#header_year { /* fix this silliness */
-  height: 100%;
+#header_year {
   line-height: 4em;
   padding: 0 20px;
 }
 
 /* PREVIEW WINDOW ====================================================*/
-main {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: stretch; /* vertical stretch*/
-  
-  padding-top: 4em;
-}
 .calendar_style {
   background: transparent;
   margin: 20px;
-  padding: 10px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.18);
   border-radius: 6px;
 }
 .preview {
   padding: 20px;
+  grid-area: main;
 }
 .preview_day {
   font-size: 28px;
@@ -146,80 +116,48 @@ main {
 }
 .preview_event {
   position: relative;
-  padding-left: 20px;
-  margin: 20px 0;
-}
-.preview_event:before {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 16px;
-  height: 16px;
-  left: 0;
-  border-radius: 50%;
+  margin: 10px;
 }
 
 /* CALENDAR =========================================================*/
-.cal_container {
-  padding-bottom: 71%; /*this will cause issues*/
+aside{
+  grid-area: cal;
+  padding: 10px;
 }
 .calendar {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
 }
 .cal_row {
   display: flex;
   justify-content: flex-start;
 }
-.cal_col {
+.cal_col, .cal_cel, .cal_empty {
   width: calc(100% / 7);
-  text-align: center;
   height: 50px;
+}
+.cal_col{
+  text-align: center;
   line-height: 50px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.cal_cel, .cal_empty {
-  position: relative;
-  width: calc(100% / 7);
+.cal_cel {
+  position: relative; /* keep this for corrent event dot position*/
+  letter-spacing: 2px;
   text-align: center;
   border-radius: 50%;
-  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-}
-.cal_cel {
+  transition: all 0.2s;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.cal_cel p {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  background: transparent;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  transition: all 0.8s cubibezier(0.4, 0, 0.2, 1);
-}
-.cal_cel::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-.cal_cel:hover {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 200px!important;
-}
-.cal_cel.isSelected {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 200px!important;
-}
-.cal_cel.isToday {
-  background-color: rgba(245, 113, 112, 0.2);
-}
-.cal_cel.isToday p {
-  background: rgba(245, 113, 112, 0.4);
+.cal_cel:hover, .cal_cel.isSelected {
+  border: 3px solid #c9c7c5;
+  box-sizing: border-box;
+  border-radius: 200px;
 }
 
 /* EVENT CREATOR =====================================================*/
@@ -236,7 +174,7 @@ main {
   background: linear-gradient(#005fb2, #b0c4df);
   visibility: hidden;
   opacity: 0;
-  transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s;
   box-sizing: border-box;
   transform: translate(-50%, -50%) scale(0.9);
   display: flex;
@@ -268,18 +206,16 @@ textarea{
   border-radius: 20px;
   box-sizing: border-box;
 }
-.event:before {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
+.event::before {
   background-color: #c9c7c5;
-  z-index: 10;
-  padding: 0;
-  top: 50%;
-  left: 50%;
   border-radius: 50%;
-  transform: translate(-50%, calc(50% + 20px/2));
-}
+  --dot_size: 0.8em; /* Event Dot: change this to change size*/
 
+  width: var(--dot_size);
+  height: var(--dot_size);
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: calc(var(--dot_size) / -2);
+  bottom: calc(var(--dot_size) / 2);
+}
