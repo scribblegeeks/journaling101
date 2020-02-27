@@ -74,7 +74,6 @@ function previousMonth() {
 //
 
 function showCalendar(month, year) {
-	
 	// Update Header
 	let Disp_Month = document.querySelector("#header_month");
 	Disp_Month.classList.add("cal_row");
@@ -123,22 +122,16 @@ function showCalendar(month, year) {
     currentDate = 1;
     restore_Entries();
 
-    dataCel.each(function(){
-		if (this.innerText == currentDate) {
-				selectDay(this);
-		}
-	});
-
     //don't go past current month
     if (month == today.getMonth() && year == today.getFullYear()){
-		document.querySelector("#next").style.pointerEvents = 'none';
-		document.querySelector("#next").style.visibility = "hidden";
-	}
-	else{
-		document.querySelector('#next').style.pointerEvents = 'auto';
-		document.querySelector("#next").style.visibility = "visible";	
-	}
-	
+    	document.querySelector("#next").style.pointerEvents = 'none';
+    	document.querySelector("#next").style.visibility = "hidden";
+    }
+    else{
+    	document.querySelector('#next').style.pointerEvents = 'auto';
+    	document.querySelector("#next").style.visibility = "visible";	
+    }
+
 }
 
 // check how many days in a month code from https://dzone.com/articles/determining-number-days-month
@@ -168,7 +161,7 @@ const editTxt = $(".preview_eventList");
 
 //open edit window
 editBtn.on("click", function() {
-  openWindow();
+	openWindow();
 });
 
 editTxt.on("click", function(){
@@ -177,12 +170,12 @@ editTxt.on("click", function(){
 
 function openWindow(){
 	if ( $(".isSelected").attr("data-notes") == undefined ) {
-  		document.querySelector("textarea").innerHTML = "";
-  	}
-  	else{
-  		document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
-  	}
-  	winCreator.addClass("isVisible");
+		document.querySelector("textarea").innerHTML = "";
+	}
+	else{
+		document.querySelector("textarea").innerHTML = $(".isSelected").attr("data-notes");
+	}
+	winCreator.addClass("isVisible");
 	$("body").addClass("overlay");
 	document.querySelector(".event_creator_date").innerHTML = currentDate + " " + monthText[currentMonth];
 }
@@ -214,13 +207,9 @@ function fillEventSidebar(NOTE) {
 	$(".preview_month").text(monthText[currentMonth]);
 	$(".preview_event").remove();
 
-  	if (NOTE != null) {
-  	$(".preview_eventList").append(
-  		"<p class='preview_event'>" +
-  		NOTE +
-  		"</span></p>"
-  		);
-  }
+	if (NOTE != null) {
+		$(".preview_eventList").append(`<p class='preview_event'> ${NOTE} </span></p>`);
+	}
 }
 
 function update_dataCel() {
