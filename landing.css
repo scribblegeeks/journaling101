@@ -7,11 +7,11 @@ html, body {
 /* BODY ==============================================================*/
 body {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 400px 1fr;
   grid-template-rows: 4em 1fr;
   grid-template-areas: 
-  "header header"
-  "main cal";
+  "header header header"
+  "article article article";
 
   background: linear-gradient(#005fb2, #b0c4df);
   color: #c9c7c5;
@@ -28,6 +28,9 @@ body {
 	font-size: 50px;
 }
 
+#calendar{
+  font-size: 50px;
+}
 header{
   
 }
