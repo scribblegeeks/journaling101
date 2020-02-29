@@ -145,3 +145,29 @@ span.psw {
   from {transform: scale(0)}
   to {transform: scale(1)}
 } 
+#log {
+  font-weight: bold;
+  color: #c9c7c5;
+  border-radius: 25px;
+  font-size: 20px;
+  
+}
+h1 {
+  font-weight: bold;
+  font-size: 85px;
+  text-align: center;
+  color: #16325c;
+  }
+
+body {
+  background: #b0c4df;
+  text-align: center;
+  font-size: large;
+  color: #16325c;
+}
+p2 {
+  position: fixed;
+  bottom: 50px;
+  right: 42%;
+  text-align: center;
+}
