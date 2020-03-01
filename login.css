@@ -37,8 +37,8 @@ button {
 
 #log {
   margin: 200px;
-  margin-left: 25%;
-  margin-right: -75%;
+  display: flex; 
+  justify-content: center;
   width:50%;
   border-radius: 20px;
 }
