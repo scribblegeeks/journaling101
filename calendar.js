@@ -34,6 +34,7 @@ make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to wri
 //
 
 document.querySelector(".today_btn").onclick = goToday;
+
 function goToday() {
 	if (currentMonth != today.getMonth() || currentYear != today.getYear()) {
 		currentMonth = today.getMonth();
