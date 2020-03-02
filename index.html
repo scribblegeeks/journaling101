@@ -1,51 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <link rel="stylesheet" type="text/css" href="login.css">
+</head> 
 <!-- Button to open the modal login form --> 
 <head> 
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <h1> for • thought </h1>
-<button id = "log" onclick="document.getElementById('id01').style.display='block'">Login</button>
+<body> 
 
-<!-- The Modal -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-class="close animate" title="Close Modal">&times;</span>
+  <!-- Button to open the modal login form -->
+  <button id = "log" onclick="document.getElementById('id01').style.display='block'">Login</button>
 
-  <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
+  <!-- The Modal -->
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Username" name="uname" required>
+    <!-- Modal Content -->
+    <form id="loginForm" class="modal-content animate" action="/journaling101-master/calindex.html">
+      <div class="imgcontainer">
+        <img src="https://i.ya-webdesign.com/images/avatar-icon-png-6.png" alt="Avatar" class="avatar">
+      </div>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Password" name="psw" required>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
+      	<button onclick="compareInfo()">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div> 
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
   }
-}
-</script>
-<body>
+  function compareInfo() {
+  	  var uname = document.getElementById("uname").value;
+  	  var psw = document.getElementById("psw").value;
+  	  const act = document.getElementById("loginForm");
+      if (uname == "annikadev" && psw == "apples") { //fill the quotes with the expected username/password
+         act.action = "/journaling101/calindexannika.html";//link the first new html here
+      }
+      else if (uname == "dalinark" && psw == "stormfather") {
+          act.action = "https://www.google.com";//link the second new html here
+      }
+  }
+  </script>
+  
   <p> Welcome to your best friend for journaling and self-reflecting. Want to know how? There's no better time or place than right here, right now. Log in to get started. </p>
   <p2> © Scribblegeeks Ltd. 2020 </p2>
 </body>
+</html>
