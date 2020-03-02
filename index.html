@@ -53,13 +53,15 @@
   var uname = document.getElementById("uname").value;
   var psw = document.getElementById("psw").value;
   const act = document.getElementById("loginForm");
-  if (uname == "johnsmith") && (psw == "apples") { //fill the quotes with the expected username/password
-      act.action = "https://www.youtube.com";//link the first new html here
+  function compareInfo() {
+      if (uname == "johnsmith") && (psw == "apples") { //fill the quotes with the expected username/password
+         act.action = "https://www.youtube.com";//link the first new html here
+      }
+      else if (uname == "dalinark") && (psw == "stormfather") {
+          act.action = "https://www.google.com";//link the second new html here
+      }
   }
-  else if (uname == "dalinark") && (psw == "stormfather") {
-      act.action = "https://www.google.com";//link the second new html here
-  }
-      
+  compareInfo();
   </script>
   
   <p> Welcome to your best friend for journaling and self-reflecting. Want to know how? There's no better time or place than right here, right now. Log in to get started. </p>
