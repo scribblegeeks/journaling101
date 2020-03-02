@@ -6,8 +6,7 @@
 
 body {
   height: 100%;
-  box-sizing: border-box !important;
-  /* code for the gradient */ 
+  box-sizing: border-box !important; 
   background: linear-gradient(#005fb2, #b0c4df);
   color: #c9c7c5;
   font-size: 13px;
