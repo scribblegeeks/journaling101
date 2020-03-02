@@ -2,24 +2,6 @@
 
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-/* Background and body */
-
-body {
-  height: 100%;
-  box-sizing: border-box !important;
-  background: #b0c4df;
-  color: #c9c7c5;
-  font-size: 13px;
-  font-family: 'Salesforce', sans-serif;
-  font-weight: 100;
-
-  background: linear-gradient(#005fb2, #b0c4df);
-  color: #c9c7c5;
-  font-size: 13px;
-  font-family: 'Salesforce', sans-serif;
-  font-weight: 100;
-}
-
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
