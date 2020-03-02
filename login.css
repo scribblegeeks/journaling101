@@ -1,4 +1,4 @@
- /* Bordered form */
+/* Bordered form */
 
 @import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
@@ -6,7 +6,13 @@
 
 body {
   height: 100%;
-  box-sizing: border-box !important; 
+  box-sizing: border-box !important;
+  background: #b0c4df;
+  color: #c9c7c5;
+  font-size: 13px;
+  font-family: 'Salesforce', sans-serif;
+  font-weight: 100;
+
   background: linear-gradient(#005fb2, #b0c4df);
   color: #c9c7c5;
   font-size: 13px;
@@ -155,20 +161,23 @@ h1 {
   text-align: center;
   color: #16325c;
   }
-/*
+
 body {
-  background: #b0c4df;
+  background: linear-gradient(#005fb2, #b0c4df);
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100vh;
+  color: #c9c7c5;
+  font-size: 13px;
+  font-family: 'Salesforce', sans-serif;
+  font-weight: 100;
   text-align: center;
   font-size: large;
   color: #16325c;
 }
-*/
-p {
-  position: relative;
-  padding: 15px;
-}
 p2 {
-  position: relative;
+  position: fixed;
   bottom: 50px;
+  right: 42%;
   text-align: center;
 }
