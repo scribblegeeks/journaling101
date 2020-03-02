@@ -162,9 +162,12 @@ body {
   font-size: large;
   color: #16325c;
 }
+p {
+  position: relative;
+  bottom: 80px;
+}
 p2 {
-  position: fixed;
+  position: relative;
   bottom: 50px;
-  right: 42%;
   text-align: center;
 }
