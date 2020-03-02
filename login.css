@@ -164,7 +164,7 @@ body {
 }
 p {
   position: relative;
-  bottom: 80px;
+  padding: 15px;
 }
 p2 {
   position: relative;
