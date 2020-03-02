@@ -37,10 +37,13 @@ button {
 
 #log {
   margin: 200px;
-  display: flex; 
   justify-content: center;
   width:50%;
   border-radius: 20px;
+  font-weight: bold;
+  color: #c9c7c5;
+  border-radius: 25px;
+  font-size: 20px;
 }
 
 /* Add a hover effect for buttons */
@@ -145,13 +148,7 @@ span.psw {
   from {transform: scale(0)}
   to {transform: scale(1)}
 } 
-#log {
-  font-weight: bold;
-  color: #c9c7c5;
-  border-radius: 25px;
-  font-size: 20px;
-  
-}
+
 h1 {
   font-weight: bold;
   font-size: 85px;
