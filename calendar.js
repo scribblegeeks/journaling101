@@ -229,11 +229,11 @@ function update_dataCel() {
 			}
 		}
 	} else {
-			dataCel.on("click", function() {
-				selectDay(this);
-			});
-		}
+		dataCel.on("click", function() {
+			selectDay(this);
+		});
 	}
+}
 
 //handles closing edit window
 function closeEdit() {
@@ -255,20 +255,33 @@ function restore_Entries(){
 	}
 }
 
+
 function make_Entry(make_date, journal_entry){
 	let entry;
-	if (entry = e.find(e => (e.year == currentYear && e.month == currentMonth && e.date == make_date))) {
-		entry.text = journal_entry;
-	} else {
-		entry = {year: currentYear, month: currentMonth, date: make_date, text: journal_entry};
-		e.push(entry);
-	}
+	if (!(journal_entry)) {
+		dataCel.each(function() {
+			if (this.innerText === make_date) {
+				this.setAttribute("data-notes", "");
+				this.classList.remove("event");
+			}
+		});
 
-	dataCel.each(function() {
-		if (this.innerText === make_date) {
-			this.setAttribute("data-notes", entry.text);
-			if (!(journal_entry)){ this.classList.remove("event"); }
-			else { this.classList.add("event"); } // needed to make the dot
+		entry = e.find(e => (e.year == currentYear && e.month == currentMonth && e.date == make_date)); 
+		e = e.filter(function(ele) { return ele != entry;});
+
+	} else {
+		if (entry = e.find(e => (e.year == currentYear && e.month == currentMonth && e.date == make_date))) {
+			entry.text = journal_entry;
+		} else {
+			entry = {year: currentYear, month: currentMonth, date: make_date, text: journal_entry};
+			e.push(entry);
 		}
-	});	
-} 
+
+		dataCel.each(function() {
+			if (this.innerText === make_date) {
+				this.setAttribute("data-notes", entry.text);
+			this.classList.add("event"); // needed to make the dot
+		}
+		});
+		}	
+	} 
