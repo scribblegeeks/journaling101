@@ -25,7 +25,7 @@ const monthText = [
 
 showCalendar(currentMonth, currentYear);
 goToday();
-make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to write");
+//make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to write");
 
 //
 //
@@ -119,8 +119,14 @@ function showCalendar(month, year) {
         OverAll.appendChild(row); 
     }
     update_dataCel();
-    currentDate = 1;
     restore_Entries();
+    currentDate = 1;
+    dataCel.each(function() {
+    	if (this.innerText == currentDate) {
+    		selectDay(this);
+    	}
+    });
+    
 
     //don't go past current month
     if (month == today.getMonth() && year == today.getFullYear()){
@@ -208,16 +214,26 @@ function fillEventSidebar(NOTE) {
 	$(".preview_event").remove();
 
 	if (NOTE != null) {
-		$(".preview_eventList").append(`<p class='preview_event'> ${NOTE} </span></p>`);
+		$(".preview_eventList").append(`<p class='preview_event'>${NOTE}</p>`);
 	}
 }
 
 function update_dataCel() {
 	dataCel = $(".cal_cel");
-	dataCel.on("click", function() {
-		selectDay(this);
-	});
-}
+	if (currentYear == today.getFullYear() && currentMonth == today.getMonth()) {
+		for (cel of dataCel) {
+			if (cel.innerText <= today.getDate()) {
+				cel.onclick = function () {
+					selectDay(this);
+				};
+			}
+		}
+	} else {
+			dataCel.on("click", function() {
+				selectDay(this);
+			});
+		}
+	}
 
 //handles closing edit window
 function closeEdit() {
@@ -240,9 +256,6 @@ function restore_Entries(){
 }
 
 function make_Entry(make_date, journal_entry){
-	if (!(journal_entry)){
-		return;
-	}
 	let entry;
 	if (entry = e.find(e => (e.year == currentYear && e.month == currentMonth && e.date == make_date))) {
 		entry.text = journal_entry;
@@ -254,7 +267,8 @@ function make_Entry(make_date, journal_entry){
 	dataCel.each(function() {
 		if (this.innerText === make_date) {
 			this.setAttribute("data-notes", entry.text);
-			this.classList.add("event"); // needed to make the dot
+			if (!(journal_entry)){ this.classList.remove("event"); }
+			else { this.classList.add("event"); } // needed to make the dot
 		}
 	});	
 } 
