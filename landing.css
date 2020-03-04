@@ -1,0 +1,60 @@
+@import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
+
+html, body {
+  height: 100%; /* fills the screen top to bottom */
+}
+
+/* BODY ==============================================================*/
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4em 400px 400px;
+  grid-template-areas: 
+  "header"
+  "article"
+  "textbox";
+
+  background: linear-gradient(#005fb2, #b0c4df);
+  color: #c9c7c5;
+  font-size: 13px;
+  font-family: 'Salesforce', sans-serif;
+  font-weight: 100;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+
+}
+article{
+  text-align: center;
+}
+
+.date{
+	font-size: 75px;
+}
+
+.greeting{
+	font-size: 50px;
+}
+
+#calendar{
+  font-size: 28px;
+  padding: 10px;
+}
+.logo{
+  text-align: center;
+  font-size: 50px;
+}
+
+#profile{
+  font-size: 28px;
+  padding: 10px;
+}
+
+.textbox{
+  grid-area: "textbox";
+  margin: 10px;
+  width: 450px;
+  height: 370px;
+}
