@@ -246,7 +246,6 @@ aside{
   visibility: visible;
 }
 textarea{
-  appearance: none;
   padding: 0;
   border-width: 0;
   resize: none;

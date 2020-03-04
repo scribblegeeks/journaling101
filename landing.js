@@ -17,6 +17,10 @@ const monthText = [
 "December"
 ];
 
+greetingTime();
+dateDisplay();
+
+
 function greetingTime(){
   let hours = today.getHours();
   if (hours < 12){
@@ -28,17 +32,15 @@ function greetingTime(){
   else{
     document.querySelector("#time_of_day").innerHTML += "evening";
   }
-  /*hours = hours % 12 || 12;
-  const i = today.getMinutes();
-  minutes = i < 10 ? "0"+i : i;
-  document.querySelector(".clock").innerHTML = hours + ":" + minutes;*/
 }
-
-greetingTime();
-
 
 function dateDisplay(){
   document.querySelector(".date").innerHTML = monthText[currentMonth] + " " + currentDate + ", " + currentYear;
 }
 
-dateDisplay();
+function save_entry() {
+  localStorage.clear();
+  localStorage["entry"] = document.querySelector("textarea").value;
+  console.log(localStorage["entry"]);
+}
+

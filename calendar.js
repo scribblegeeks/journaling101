@@ -23,6 +23,9 @@ const monthText = [
 "December"
 ];
 
+dataCel = $(".cal_cel");
+make_Entry(currentDate.toString(), localStorage["entry"]);
+
 showCalendar(currentMonth, currentYear);
 
 currentDate = today.getDate();

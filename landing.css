@@ -1,14 +1,13 @@
-@import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
+@import url(https://db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
-html, body {
-  height: 100%; /* fills the screen top to bottom */
-}
 
 /* BODY ==============================================================*/
+
+
 body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 4em 400px 400px;
+  grid-template-rows: 4em 1fr 1fr;
   grid-template-areas: 
   "header"
   "article"
@@ -22,39 +21,43 @@ body {
 }
 
 header{
+  grid-area: header;
   display: flex;
   justify-content: space-between;
 
 }
 article{
+  margin-top: 10em;
+  grid-area: article;
+  align-content: center;
   text-align: center;
 }
-
+#edit {
+  height: 70%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.textbox{
+  grid-area: textbox;
+  height: 100%;
+}
 .date{
-	font-size: 75px;
+	font-size: 3em;
 }
 
 .greeting{
-	font-size: 50px;
+	font-size: 2em;
 }
 
 #calendar{
-  font-size: 28px;
+  font-size: 2em;
   padding: 10px;
 }
 .logo{
+  height: 2em;
+  line-height: 2em;
   text-align: center;
-  font-size: 50px;
+  margin: 0px;
 }
 
-#profile{
-  font-size: 28px;
-  padding: 10px;
-}
 
-.textbox{
-  grid-area: "textbox";
-  margin: 10px;
-  width: 450px;
-  height: 370px;
-}
