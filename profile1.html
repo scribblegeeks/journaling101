@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Journaling Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+  
+  <link rel="stylesheet" href="./calendar.css">
+</head>
+
+<body>
+  <header>
+    <div class="monthyear">
+        <nav class="month">
+          <span id="prev" class="fa fa-angle-left"></span>
+          <div id="header_month"></div>
+          <span id="next" class="fa fa-angle-right"></span>
+        </nav>
+        <span id="header_year">2020</span>
+      </div>
+      <a class="o-btn today_btn" href="javascript:;">TODAY</a>
+  </header>
+  
+  
+  <div class="popup">Annika deVogel
+    <div class="popuptext" id="myPopup">Username: annikadv <br></br> joined 3/1/2020 <br></br>
+      <button onclick="window.location.href = '/journaling101/index.html';">Sign Out</button></div>
+      
+    </div> 
+  
+    <section class="preview calendar_style">
+      <h1 class="preview_day">
+        <span class="preview_num"></span>
+        <span class="preview_month"></span>
+      </h1>
+      <a class="add o-btn js-event_add" href="javascript:;">Edit</a>
+      <article class="preview_eventList"></article>
+    </section>
+
+    <aside class="cal_container calendar_style">
+      <table class="calendar"></table>
+    </aside>
+  
+  
+  <div class="event_creator calendar_style js-event_creator">
+    <a href="javascript:;" class="o-btn js-event_save">SAVE <span class="fa fa-save"></span></a>
+    <article class="event_creator_date"></article>
+    <a href="javascript:;" class="o-btn js-event_close"> CLOSE <span class="fa fa-close"></span></a>
+    <form id="edit">
+      <textarea contenteditable="true" placeholder="Thoughts on today?" name="notes" > </textarea>
+    </form>
+    <br>
+  </div>
+</div>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.core.min.js'></script>
+
+<script  src="./calendar.js"></script>  
+<script>
+  make_Entry("2", "something about a horse with no name i don't remember the actual words");
+  make_Entry("1", "too many late nights makes for songs that I can't write #mood");
+  make_Entry("4", "heeeeey hey baby hey what go wildcats i wanna knowwwww will you be my girl just for the night but with consent");
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
+@import url(https://db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular);
 
 /* GENERAL STYLE =====================================================*/
 a {
@@ -25,6 +25,54 @@ a {
   border-radius: 200px!important;
 }
 
+.popup:hover {
+  border: 1px solid #c9c7c5;
+  box-sizing: border-box !important;
+  border-radius: 20px!important;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+  margin-left: 60%;
+  height: 40px;
+  width: 200px;
+  padding-left: 8px;
+  padding-right: 8px;
+  line-height:40px;
+  }
+
+/* The actual popup (appears on top) */
+.popuptext {
+  visibility: hidden;
+  background-color: #005fb2;
+  z-index: 100000;
+  position: relative;
+  color: #c9c7c5;
+  text-align: left;
+  border-radius: 25px;
+  padding: 20px 20px;
+}
+
+.popup:hover .popuptext {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 html, body {
   height: 100%; /* fills the screen top to bottom */
 }
