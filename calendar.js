@@ -24,7 +24,12 @@ const monthText = [
 ];
 
 showCalendar(currentMonth, currentYear);
-goToday();
+
+currentDate = today.getDate();
+goDay(currentDate);
+
+
+
 //make_Entry("14", "busy day, saw a movie, hung out with Ted, not much time to write");
 
 //
@@ -33,7 +38,9 @@ goToday();
 //
 //
 
+/*  OLD TODAY BUTTON CODE
 document.querySelector(".today_btn").onclick = goToday;
+
 function goToday() {
 	if (currentMonth != today.getMonth() || currentYear != today.getYear()) {
 		currentMonth = today.getMonth();
@@ -48,6 +55,15 @@ function goToday() {
 		}
 	});
 };
+*/
+
+function goDay(num) {
+	dataCel.each(function() {
+		if (this.innerText == num) {
+			selectDay(this);
+		}
+	});
+}
 
 document.querySelector("#next").onclick = nextMonth;
 function nextMonth() {
@@ -121,11 +137,7 @@ function showCalendar(month, year) {
     update_dataCel();
     restore_Entries();
     currentDate = 1;
-    dataCel.each(function() {
-    	if (this.innerText == currentDate) {
-    		selectDay(this);
-    	}
-    });
+    goDay(currentDate);
     
 
     //don't go past current month
@@ -213,8 +225,11 @@ function fillEventSidebar(NOTE) {
 	$(".preview_month").text(monthText[currentMonth]);
 	$(".preview_event").remove();
 
-	if (NOTE != null) {
+	if (NOTE != null && NOTE != "") {
 		$(".preview_eventList").append(`<p class='preview_event'>${NOTE}</p>`);
+		$(".add")[0].innerHTML = "EDIT";
+	} else {
+		$(".add")[0].innerHTML = "ADD";
 	}
 }
 
@@ -280,8 +295,8 @@ function make_Entry(make_date, journal_entry){
 		dataCel.each(function() {
 			if (this.innerText === make_date) {
 				this.setAttribute("data-notes", entry.text);
-			this.classList.add("event"); // needed to make the dot
-		}
+				this.classList.add("event"); // needed to make the dot
+			}
 		});
-		}	
-	} 
+	}	
+} 

@@ -32,28 +32,25 @@ a {
 }
 
 .popup {
-  position: relative;
-  display: inline-block;
   cursor: pointer;
   text-align: center;
-  margin-top: 8px;
-  margin-left: 60%;
   height: 40px;
-  width: 200px;
-  padding-left: 8px;
-  padding-right: 8px;
   line-height:40px;
   }
-
+.avatar {
+  width: 20px;
+  border-radius: 50%;
+}
 /* The actual popup (appears on top) */
 .popuptext {
+  cursor: auto;
   visibility: hidden;
   background-color: #005fb2;
   z-index: 100000;
   position: relative;
   color: #c9c7c5;
   text-align: left;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 20px 20px;
 }
 
@@ -80,11 +77,11 @@ html, body {
 /* BODY ==============================================================*/
 body {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 400px 1fr;
   grid-template-rows: 4em 1fr;
   grid-template-areas: 
   "header header"
-  "main cal";
+  "cal main";
 
   background: linear-gradient(#005fb2, #b0c4df);
   color: #c9c7c5;
@@ -152,7 +149,7 @@ header {
   background: transparent;
   margin: 20px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.18);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .preview {
   padding: 20px;
