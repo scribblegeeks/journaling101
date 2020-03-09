@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>Journaling Calendar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+  <script src="https://kit.fontawesome.com/6d029a2889.js" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="./calendar.css">
 </head>
 
 <body>
   <header>
+    <a id="home" class="fas fa-home" aria-hidden="true" ></a>
     <div class="monthyear">
       <nav class="month">
         <span id="prev" class="fa fa-angle-left"></span>
@@ -68,7 +69,7 @@
   make_Entry("1", "too many late nights makes for songs that I can't write #mood");
   make_Entry("4", "heeeeey hey baby hey what go wildcats i wanna knowwwww will you be my girl just for the night but with consent");
   document.querySelector(".popup").innerHTML = 
-  `<img src="https://i.ya-webdesign.com/images/avatar-icon-png-6.png" alt="Avatar" class="avatar">
+  `<a id="profileicon" class="far fa-user-circle" aria-hidden="true" ></a>
       Annika deVogel
     <div class="popuptext" id="myPopup">
       Username: annikadv 

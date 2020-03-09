@@ -143,6 +143,13 @@ header {
   line-height: 4em;
   padding: 0 20px;
 }
+#profileicon {
+  font-size: 2em;
+}
+
+#home{
+  font-size: 2em;
+}
 
 /* PREVIEW WINDOW ====================================================*/
 .calendar_style {
