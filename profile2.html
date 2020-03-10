@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Journaling Calendar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+  <script src="https://kit.fontawesome.com/6d029a2889.js" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="./calendar.css">
 </head>
@@ -12,6 +12,7 @@
 <body>
   <header>
     <div class="monthyear">
+      <a id="home" class="fas fa-home" aria-hidden="true" ></a>
       <nav class="month">
         <span id="prev" class="fa fa-angle-left"></span>
         <div id="header_month"></div>
@@ -67,7 +68,7 @@
   make_Entry("1", "mama, I just killed a man. put a gun nearby his noggin. Pushed the button, now he is deceased.");
   make_Entry("3", "bicycle. BICYCLE!");
   document.querySelector(".popup").innerHTML = 
-  `<img src="https://i.ya-webdesign.com/images/avatar-icon-png-6.png" alt="Avatar" class="avatar">
+  `<a id="profileicon" class="far fa-user-circle" aria-hidden="true" ></a>
     Dalinar Kholin
     <div class="popuptext" id="myPopup">
       Username: dalinark 

@@ -123,6 +123,7 @@ header > * {
 #home{
   font-size: 2em;
   padding: 10px;
+  padding-right: 55px;
 }
 
 .avatar {
