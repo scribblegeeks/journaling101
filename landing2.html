@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>Journaling Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+  <script src="https://kit.fontawesome.com/6d029a2889.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./calendar.css">
   <link rel="stylesheet" href="./landing.css">
 </head>
 
 <body>
   <header>
-    <a id="calendar" class="fa fa-calendar" aria-hidden="true" ></a>
+    <a id="calendar" class="far fa-calendar-alt" aria-hidden="true" ></a>
     <h1 class = "logo">for &#183 thought</h1>
     <div id="profile" class="popup" aria-hidden="true"></div>
   </header>
@@ -33,17 +33,17 @@
   
   <script src="./landing.js"></script>
   <script>
-  document.querySelector("#calendar").setAttribute("href",'/journaling101/profile2.html');
+  document.querySelector("#calendar").setAttribute("href",'/journaling101/profile1.html');
 
   document.querySelector(".popup").innerHTML = 
-  `<img src="https://i.ya-webdesign.com/images/avatar-icon-png-6.png" alt="Avatar" class="avatar">
-    Dalinar Kholin
+  `<a id="profileicon" class="far fa-user-circle" aria-hidden="true" ></a>
+      Dalinar Kholin
     <div class="popuptext" id="myPopup">
       Username: dalinark 
       <br>
-      joined 2/30/2020 
+      joined 2/29/2020 
       <br>
-      <button onclick="window.location.href = '/journaling101/index.html';">Sign Out</button></div>`;
+      <button onclick="window.location.href = '/journaling101/index.html';">Sign Out</button>`;
   
   document.querySelector("#name").innerHTML = "Dalinar";
   document.querySelector("form").setAttribute("action",'/journaling101/profile2.html');

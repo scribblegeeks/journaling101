@@ -60,10 +60,18 @@ article{
   text-align: center;
   margin: 0px;
 }
+
+#profileicon{
+  font-size: 2em;
+  padding-bottom: 4px;
+  vertical-align: middle;
+}
+
 #save-cal {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
   justify-content: center;
+  border: 1px solid #16325c;
 }
 
