@@ -41,6 +41,5 @@ function dateDisplay(){
 function save_entry() {
   localStorage.clear();
   localStorage["entry"] = document.querySelector("textarea").value;
-  console.log(localStorage["entry"]);
 }
 

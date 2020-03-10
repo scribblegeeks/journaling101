@@ -58,9 +58,11 @@
     var psw = document.getElementById("psw").value;
     const act = document.getElementById("loginForm");
       if (uname == "annikadv" && psw == "apples") { //fill the quotes with the expected username/password
+        localStorage.clear(); 
          act.action = "/journaling101/landing1.html";//link the first new html here
       }
       else if (uname == "dalinark" && psw == "stormfather") {
+          localStorage.clear();
           act.action = "/journaling101/landing2.html";//link the second new html here
       }
   }

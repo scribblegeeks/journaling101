@@ -15,49 +15,15 @@ a {
   letter-spacing: 2px;
   border-radius: 16px;
   transition: all 0.4s cubibezier(0.4, 0, 0.2, 1);
+  border: 1px solid #c9c7c5;
+  box-sizing: border-box !important;
+  border-radius: 200px!important;
 }
 .o-btn span {
   margin-left: 10px;
 }
 .o-btn:hover {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 200px!important;
-}
-
-.popup:hover {
-  border: 1px solid #c9c7c5;
-  box-sizing: border-box !important;
-  border-radius: 20px!important;
-}
-
-.popup {
-  cursor: pointer;
-  text-align: center;
-  height: 40px;
-  line-height:40px;
-  }
-.avatar {
-  width: 20px;
-  border-radius: 50%;
-}
-/* The actual popup (appears on top) */
-.popuptext {
-  cursor: auto;
-  visibility: hidden;
   background-color: #005fb2;
-  z-index: 100000;
-  position: relative;
-  color: #c9c7c5;
-  text-align: left;
-  border-radius: 15px;
-  padding: 20px 20px;
-}
-
-.popup:hover .popuptext {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
 }
 
 /* Add animation (fade in the popup) */
@@ -115,10 +81,15 @@ header {
   box-sizing: border-box;
   background: transparent;
 }
+header > * {
+  width: 300px;
+}
+#for_thought {
+  text-align: center;
+}
 .monthyear {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: center;
   letter-spacing: 2px;
 }
@@ -153,6 +124,40 @@ header {
   font-size: 2em;
   padding: 10px;
 }
+
+.avatar {
+  width: 20px;
+  border-radius: 50%;
+}
+.popup {
+  cursor: pointer;
+  text-align: center;
+  height: 40px;
+  line-height:40px;
+  }
+/* The actual popup (appears on top) */
+.popuptext {
+  cursor: auto;
+  visibility: hidden;
+  background-color: #005fb2;
+  z-index: 100000;
+  position: relative;
+  color: #c9c7c5;
+  text-align: left;
+  border-radius: 15px;
+  padding: 20px 20px;
+}
+.popup:hover {
+  border: 1px solid #c9c7c5;
+  box-sizing: border-box !important;
+  border-radius: 20px!important;
+}
+.popup:hover .popuptext {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
 
 /* PREVIEW WINDOW ====================================================*/
 .calendar_style {
