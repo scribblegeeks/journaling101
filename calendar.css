@@ -145,10 +145,13 @@ header {
 }
 #profileicon {
   font-size: 2em;
+  padding-bottom: 4px;
+  vertical-align: middle;
 }
 
 #home{
   font-size: 2em;
+  padding: 10px;
 }
 
 /* PREVIEW WINDOW ====================================================*/

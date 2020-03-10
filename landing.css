@@ -62,5 +62,7 @@ article{
 
 #profileicon{
   font-size: 2em;
+  padding-bottom: 4px;
+  vertical-align: middle;
 }
 
