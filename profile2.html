@@ -22,8 +22,9 @@
     </div>
 
     <h1 id="for_thought"> for • thought </h1>
-
-    <div class="popup"> <!--Filled by script--> </div>
+    <div class="container">    
+      <div class="popup"> <!--Filled by script--> </div>
+    </div>
   </div> 
   <!-- Removed TODAY button
     <a class="o-btn today_btn" href="javascript:;">TODAY</a>
@@ -65,6 +66,7 @@
 
 <script  src="./calendar.js"></script>  
 <script>
+  document.querySelector("#home").setAttribute("href",'/journaling101/landing2.html');
   make_Entry("1", "mama, I just killed a man. put a gun nearby his noggin. Pushed the button, now he is deceased.");
   make_Entry("3", "bicycle. BICYCLE!");
   document.querySelector(".popup").innerHTML = 

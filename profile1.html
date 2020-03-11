@@ -17,17 +17,18 @@
         <span id="prev" class="fa fa-angle-left"></span>
         <div id="header_month"></div>
         <span id="next" class="fa fa-angle-right"></span>
-      </nav>
       <span id="header_year">2020</span>
+    </nav>
+
+      
     </div>
 
     <h1 id="for_thought"> for • thought </h1>
-
-    <div class="popup"> <!--Filled by script--> </div>
+    <div class="container">    
+      <div class="popup"> <!--Filled by script--> </div>
+    </div>
   </div> 
-  <!-- Removed TODAY button
-    <a class="o-btn today_btn" href="javascript:;">TODAY</a>
-  -->
+
   </header>
   
   
@@ -65,6 +66,8 @@
 
 <script  src="./calendar.js"></script>  
 <script>
+  document.querySelector("#home").setAttribute("href",'/journaling101/landing1.html');
+
   make_Entry("2", "something about a horse with no name i don't remember the actual words");
   make_Entry("1", "too many late nights makes for songs that I can't write #mood");
   make_Entry("4", "heeeeey hey baby hey what go wildcats i wanna knowwwww will you be my girl just for the night but with consent");
