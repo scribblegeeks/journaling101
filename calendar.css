@@ -40,6 +40,10 @@ html, body {
   height: 100%; /* fills the screen top to bottom */
 }
 
+button{
+  cursor: pointer;
+}
+
 /* BODY ==============================================================*/
 body {
   display: grid;
