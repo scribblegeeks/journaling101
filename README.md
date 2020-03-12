@@ -28,6 +28,8 @@ In our paper prototype, people found that editing both the current day's entry a
 
 ### Login Screen
 
+![Login Screen](https://github.com/scribblegeeks/journaling101/blob/master/pics/Index%20without%20login.png)
+
 ![Login Pop-up](https://github.com/scribblegeeks/journaling101/blob/master/pics/Login%20screen.png)
 
 Our login screen, designed based on Salesforce's protocols, includes a simple introduction to our platform and a large LOGIN button. The button takes you to a pop-up with a username/password entry form and options to log in to the program or exit. Upon logging in, users are taken to a custom home screen personalized with their name, a time-sensitive greeting, and a rotating prompt for the day's entry. The home screen has the day's entry and an option to save the entry to the calendar, as well an option to access the calendar, a custom user dropdown, and a sign-out button.
