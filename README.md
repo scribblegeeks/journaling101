@@ -1,7 +1,7 @@
 # Welcome to forthought
-### your companion for daily self-reflection.
+### your companion for daily self-reflection
 
-#### Annika deVogel, Jules Gilligan, Braden Svoboda, Julia Odden
+#### Annika de Vogel, Jules Gilligan, Braden Svoboda, Julia Odden
 
 ## Problem Space
 In today’s fast-paced world, some people struggle to find the time or the energy to begin self-reflection. Remembering what we do and how we feel on a day-to-day basis without some sort of record is impossible, and that forgetfulness can lead to mindless repetition of old patterns or bad habits. 
