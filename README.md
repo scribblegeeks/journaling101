@@ -1,4 +1,4 @@
-# Welcome to forthought
+# Welcome to for • thought
 ### your companion for daily self-reflection
 
 #### Annika de Vogel, Jules Gilligan, Braden Svoboda, Julia Odden
