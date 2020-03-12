@@ -45,7 +45,7 @@ Our first component was the custom calendar. Our aesthetic goal was soothing and
 We used Salesforce's branding protocols to choose our color scheme, fonts, and spacing and icons for our platform.
 
 ## Reflection
-In the time we had, we created a visually appealing platform with many of our originally proposed functionalities. If we had more time, we would have inserted an option for adding media to your daily entries (think photos and videos, potentially sound bytes) and included a data-visualization platform to see changes in mood or day quality over time.
+In the time we had, we created a visually appealing platform with many of our originally proposed functionalities. If we had more time, we would have inserted an option for adding media to your daily entries (think photos and videos, potentially sound bytes), included a data-visualization platform to see changes in mood or day quality over time, and allowed users to customize the text of their journal entries.
 
 ## Links
 [GitHub Repository](https://github.com/scribblegeeks/journaling101)
